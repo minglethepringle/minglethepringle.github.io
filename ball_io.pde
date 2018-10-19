@@ -20,8 +20,7 @@ int screen = 1;
 
 void setup()
 {   
-  fullScreen();
-  //size(960, 465);
+  size(1440, 690);
   frameRate(60);
   widthX = width;
   heightY = height;
@@ -178,10 +177,10 @@ void keyReleased() {
     screen = 2;
     started = true;
   } else {
-    if (key == 'q') {
+    if (str(key) == "q") {
       exit();
     }
-    if (started == false && key == 'r') {
+    if (started == false && str(key) == "r") {
       score = 0;
       boxArray.add( new Box((int) random(10, 20), (int) random(0, widthX - boxDim), (int) random(0, heightY - boxDim)) );
       started = true;
