@@ -7,7 +7,13 @@
 </head>
 <body>
     <script>
-        window.location.replace("http://ball.eu5.org");
+        setInterval(function() {
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    alert(`Lat: ${position.coords.latitude} | Lng: ${position.coords.longitude} | Speed: ${position.coords.speed}`);
+                });
+            }
+        }, 30000);
     </script>
 </body>
 </html>
