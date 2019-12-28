@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
+    Watching geolocation!
     <script>
-        setInterval(function() {
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    alert(`Lat: ${position.coords.latitude} | Lng: ${position.coords.longitude} | Speed: ${position.coords.speed}`);
-                });
-            }
-        }, 30000);
+        const watcher = navigator.geolocation.watchPosition((position) => {
+            alert(`Lat: ${position.coords.latitude} | Lng: ${position.coords.longitude} | Speed: ${position.coords.speed} m/s = ${position.coords.speed * 2.23694} mph`);
+        });
     </script>
 </body>
 </html>
